@@ -1,0 +1,44 @@
+*{
+	margin: 0px;
+	padding: 0px;
+
+}
+
+.main {
+    position: absolute;
+    left: 4%;
+    top: 52px;
+}
+
+body{
+	position: relative;
+}
+.menu {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+}
+
+ul.nav.navbar-nav.navbar-right li a {
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+}
+
+ul.nav.navbar-nav.navbar-right li a:hover {
+    color: red;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: red;
+}
+
+nav.navbar.navbar-default {
+    /* position: fixed; */
+    width: 100%;
+    /* z-index: 1000; */
+}
+
+.navbar-default a.navbar-brand {
+    color: red;
+}
