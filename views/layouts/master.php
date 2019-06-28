@@ -20,14 +20,20 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php?controller=home">Trang quản trị </a>
+        <a class="navbar-brand" href="index.php?controller=home">Quản trị website</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="index.php?controller=product">Danh sách sản phẩm </a></li>
-          <li><a href="#">Đăng xuất </a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['admin'] ?><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+               <li><a href="index.php?controller=login&action=logout">Logout</a></li>
+            </ul>
+          </li>
+         
         </ul>
       </div><!-- /.navbar-collapse -->
     </div>
@@ -44,3 +50,7 @@
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
+

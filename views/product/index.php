@@ -8,6 +8,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<h3 class="text-center">Danh sach san pham</h3>
+			<a href="#" class="btn btn-success" style="margin-bottom: 5px">Thêm</a>
 			<table class="table table-bordered">
 				<thead>
 					<tr>

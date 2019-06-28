@@ -3,6 +3,7 @@
 $controllers = array(
 	"home" => ["index", "error"],
 	"product" => ["index"],
+	"login" => ["index", "checkLogin", "logout"],
 );
 //kiem tra su ton tai cua controller va action. Neu khong ton tai thi dua ra trang bao loi
 if(!array_key_exists($controller, $controllers) || !in_array($action, $controllers[$controller])){

@@ -13,5 +13,7 @@ class ProductController extends BaseController {
 		$this->returnView("index", $data);
 	}
 
+	
+
 }
 ?>

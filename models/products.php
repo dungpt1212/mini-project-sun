@@ -28,6 +28,11 @@ class Products{
 		return $list;
 	}
 
+	public function add()
+	{
+		
+	}
+
 }
 
 /*echo '<pre>';

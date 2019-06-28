@@ -12,7 +12,12 @@ class BaseController {
 
 			// require_once ($path_file);
 			// $content = ob_get_clean();// ham ob_get_clean(): lay du lieu tu bo nho tam de xu ly, sau do se xoa luon
-			require_once ('views/layouts/master.php');
+			if(isset($_SESSION["admin"])){//kiem tra neu ton tai session["admin"] moi cho truy cap vao view theo yeu cau
+				require_once ('views/layouts/master.php');
+			}
+			else{// khong ton tai session thi dieu huong ve trang login
+				header("location: index.php?controller=login");
+			}	
 		} else {
 			header("location: index.php?controller=home&action=error");
 		}
