@@ -23,19 +23,30 @@ class LoginController extends BaseController {
 		}
 	}
 	public function index() {
+		if(isset($_COOKIE['admin'])){ // kiem tra ton tai cookie thi cho ngay vao trang chu 
+			$_SESSION["admin"] = $_COOKIE["admin"];
+			header("location: index.php?controller=home");
+		}// neu khong ton tai thi hien form dang nhap
 		$data = array("error" => "");
 		$this->returnView("index", $data);
 	}
 
-	public function checkLogin() 
+	public function checkLogin() // ham kiem tra dang nhap
 	{
 		if (isset($_POST["btn_login"])) {
 			if(isset($_POST["email"]) && isset($_POST["pass"])){
 				$email = $_POST["email"];
 				$pass = $_POST["pass"];
-				if(Admin::findByEmail($email, $pass) > 0){ // kiem tra neu email va pass trung khop voi csdl thi cho vao trang chu va luu session
-					$_SESSION['admin'] = $email;
-					header("location:index.php?controller=home");
+				if(Admin::findByEmail($email, $pass) > 0){ // kiem tra neu email va pass trung khop voi csdl thi kiem tra den nguoi dung tick vao remember me chua
+					if(isset($_POST["remember-me"])){// TH1: da click thi luu ca session va cookie 
+						$_SESSION['admin'] = $email;
+						setcookie("admin", $email, time() + 60);
+						header("location:index.php?controller=home");
+					}else{//th2: chua click thi chi luu session
+						$_SESSION['admin'] = $email;
+						header("location:index.php?controller=home");
+					}
+					
 				}else {//neu khong trung quay tro lai trang login va dua ra thong bao loi
 					$this->folder = "login";
 					$data = array("error" => "Sai thông tin đăng nhập");
@@ -49,6 +60,7 @@ class LoginController extends BaseController {
 	public function logout()
 	{
 		unset($_SESSION["admin"]);
+		setcookie("admin", $email, time() - 999999);
 		header("location: index.php?controller=login");
 	}
 
