@@ -2,7 +2,7 @@
 // tao ra mang $controllers voi key la ten cac controller va value la ten cac ham(action)
 $controllers = array(
 	"home" => ["index", "error"],
-	"product" => ["index"],
+	"product" => ["index", "add", "postAdd", "delete","update", "postUpdate"],
 	"login" => ["index", "checkLogin", "logout"],
 );
 //kiem tra su ton tai cua controller va action. Neu khong ton tai thi dua ra trang bao loi

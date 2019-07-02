@@ -40,7 +40,8 @@ class LoginController extends BaseController {
 				if(Admin::findByEmail($email, $pass) > 0){ // kiem tra neu email va pass trung khop voi csdl thi kiem tra den nguoi dung tick vao remember me chua
 					if(isset($_POST["remember-me"])){// TH1: da click thi luu ca session va cookie 
 						$_SESSION['admin'] = $email;
-						setcookie("admin", $email, time() + 60);
+						$time = 60*60*24;
+						setcookie("admin", $email, time() + $time);
 						header("location:index.php?controller=home");
 					}else{//th2: chua click thi chi luu session
 						$_SESSION['admin'] = $email;
@@ -60,7 +61,7 @@ class LoginController extends BaseController {
 	public function logout()
 	{
 		unset($_SESSION["admin"]);
-		setcookie("admin", $email, time() - 999999);
+		setcookie("admin", $email, time() - 99999999);
 		header("location: index.php?controller=login");
 	}
 

@@ -26,7 +26,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.php?controller=product">Danh sách sản phẩm </a></li>
+          <li><a href="index.php?controller=product">Quản lý sản phẩm </a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['admin'] ?><b class="caret"></b></a>
             <ul class="dropdown-menu">

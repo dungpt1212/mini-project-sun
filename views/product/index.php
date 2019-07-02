@@ -8,7 +8,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<h3 class="text-center">Danh sach san pham</h3>
-			<a href="#" class="btn btn-success" style="margin-bottom: 5px">Thêm</a>
+			<a href="index.php?controller=product&action=add" class="btn btn-success" style="margin-bottom: 5px">Thêm</a>
 			<table class="table table-bordered">
 				<thead>
 					<tr>
@@ -35,8 +35,8 @@
 							<td><img src="assets/images/<?php echo $val->image ?>" alt=""></td>
 							<td><?php echo $val->amount ?></td>
 							<td>
-								<a href="#" class="glyphicon glyphicon-pencil" style="margin-right: 10%"></a>
-								<a href="#" class="glyphicon glyphicon-trash"></a>
+								<a href="index.php?controller=product&action=update&id=<?php echo $val->id ?>" class="glyphicon glyphicon-pencil" style="margin-right: 10%"></a>
+								<a href="index.php?controller=product&action=delete&id=<?php echo $val->id ?>" class="glyphicon glyphicon-trash"></a>
 							</td>
 						</tr>
 					<?php } ?>
