@@ -8,8 +8,20 @@ class ProductController extends BaseController {
 	}
 
 	public function index() {
+		if(isset($_GET["PageNo"])){
+			if(is_numeric($_GET["PageNo"]))
+				$page = $_GET["PageNo"];
+			else $page = 1; 
+		}else{
+			$page = 1;
+		}
 		$products = Products::showAll();
-		$data = array("products" => $products);
+		$data = array(
+			"products" => $products, 
+			"page" => $page, 
+			"total_page" => $products["total_page"],
+
+		);
 		$this->returnView("index", $data);
 	}
 

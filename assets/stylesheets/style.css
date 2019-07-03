@@ -1,7 +1,11 @@
 *{
-	margin: 0px;
-	padding: 0px;
+    margin: 0px;
+    padding: 0px;
 
+}
+
+ul.pagination.text-center {
+    margin-left: 30%;
 }
 
 .main {
@@ -11,7 +15,7 @@
 }
 
 body{
-	position: relative;
+    position: relative;
 }
 .menu {
     z-index: 1000;
