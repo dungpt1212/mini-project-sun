@@ -21,7 +21,7 @@
 							<div class="row">
 								<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="tim kiem..." name="key">
+										<input type="text" class="form-control" placeholder="tim kiem..." name="key" required="required">
 									</div>
 								</div>
 								<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
