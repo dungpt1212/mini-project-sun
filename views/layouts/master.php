@@ -28,7 +28,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="index.php?controller=product">Quản lý sản phẩm </a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['admin'] ?><b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo isset($_SESSION["admin"])?$_SESSION['admin'] : $_COOKIE["admin"] ?><b class="caret"></b></a>
             <ul class="dropdown-menu">
                <li><a href="index.php?controller=login&action=logout">Logout</a></li>
             </ul>

@@ -1,1 +1,1 @@
-<h3>404 not found</h3>
+<h3 style="text-align: center;">Không tìm thấy trang bạn yêu cầu hoặc có lỗi xảy ra</h3>
