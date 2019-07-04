@@ -8,7 +8,7 @@ class ProductController extends BaseController {
 	}
 
 	public function index() {
-		if(isset($_POST["key"])){ // neu ton tai keyword khi nguoi dung an tim kiem
+		if(isset($_POST["key"]) && ($_POST["key"]!=" ")){ // neu ton tai keyword khi nguoi dung an tim kiem
 			$products = Products::search($_POST["key"]);
 			$data = array(
 				"products" => $products, 
